@@ -2,18 +2,38 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld> {{msg}}</HelloWorld>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import NewBook from './components/NewBook.vue'
+import BookList from './components/BookList.vue'
+import axios from 'axios'// run on local host: 9000 
+//create book list and a separate profile
+
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    HelloWorld,
+    BookList,
+    NewBook
+  },
+  data() {
+    return {
+      todo: [
+        {
+          id: 1,
+          title: Zippy,
+          completed: true
+        }
+      ]
+    }
+    
   }
-}
+};
 </script>
 
 <style>
